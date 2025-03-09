@@ -1,0 +1,83 @@
+﻿<Window x:Class="Magazine.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Magazine"
+        mc:Ignorable="d"
+        Icon="/Image/img2.png"
+        Title="Управление торговлей"
+       Width="{DynamicResource {x:Static SystemParameters.MaximizedPrimaryScreenWidthKey}}" Height="{DynamicResource {x:Static SystemParameters.MaximizedPrimaryScreenHeightKey}}"   ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Menu DockPanel.Dock="Top" Background="White"  Margin="0,0,0,775">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Открыть"/>
+                <MenuItem Header="Сохранить"/>
+                <Separator/>
+                <MenuItem Header="Выход" Click="Exit_Click"/>
+            </MenuItem>
+            <Separator Width="10"/>
+            <MenuItem Header="Правка">
+                <MenuItem Header="Отменить"/>
+                <MenuItem Header="Повторить"/>
+            </MenuItem>
+            <Separator Width="10"/>
+            <MenuItem Header="Операции">
+                <MenuItem Header="Цены" Click="MenuItem_Click" Tag="Prices"/>
+                <MenuItem Header="Поступления"/>
+                <MenuItem Header="Продажи"/>
+                <MenuItem Header="Выручка"/>
+                <MenuItem Header="Инвентаризация"/>
+            </MenuItem>
+            <Separator Width="10"/>
+            <MenuItem Header="Цены">
+                <MenuItem Header="Пользователи"/>
+                <MenuItem Header="Конфигурация"/>
+            </MenuItem>
+            <Separator Width="10"/>
+            <MenuItem Header="Поступления">
+                <MenuItem Header="Пользователи"/>
+                <MenuItem Header="Конфигурация"/>
+            </MenuItem>
+            <Separator Width="10"/>
+            <MenuItem Header="Продажи">
+                <MenuItem Header="Пользователи"/>
+                <MenuItem Header="Конфигурация"/>
+            </MenuItem>
+            <Separator Width="10"/>
+            <MenuItem Header="Выручка">
+                <MenuItem Header="Пользователи"/>
+                <MenuItem Header="Конфигурация"/>
+            </MenuItem>
+            <Separator Width="10"/>
+            <MenuItem Header="Инвентаризация">
+                <MenuItem Header="Пользователи"/>
+                <MenuItem Header="Конфигурация"/>
+            </MenuItem>
+            <Separator Width="10"/>
+            <MenuItem Header="Обмен с ГосИС">
+                <MenuItem Header="Пользователи"/>
+                <MenuItem Header="Конфигурация"/>
+            </MenuItem>
+            <Separator  Width="10"/>
+            <MenuItem Header="Сервис">
+                <MenuItem Header="Пользователи"/>
+                <MenuItem Header="Конфигурация"/>
+            </MenuItem>
+            <Separator  Width="10"/>
+            <MenuItem Header="Окна">
+                <MenuItem Header="Пользователи"/>
+                <MenuItem Header="Конфигурация"/>
+            </MenuItem>
+            <Separator Width="10"/>
+            <MenuItem Header="Справка">
+                <MenuItem Header="Пользователи"/>
+                <MenuItem Header="Конфигурация"/>
+            </MenuItem>
+        </Menu>
+        <Frame x:Name="MainFrame" Height="770" VerticalAlignment="Top" Margin="0,52,0,0"/>
+
+
+
+    </Grid>
+</Window>

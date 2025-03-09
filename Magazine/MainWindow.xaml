@@ -1,0 +1,22 @@
+﻿<Window x:Class="Magazine.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Magazine"
+        mc:Ignorable="d"
+        BorderThickness="10,0,10,10"
+        Icon="/Image/img2.png"
+        Title="Magazine" Height="400" Width="650" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="{x:Null}" BorderBrush="White" Foreground="{x:Null}">
+    <Grid Background="#FFD9D9D9" >
+        <Label Content="Пользователь:" HorizontalAlignment="Left" Margin="113,137,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Cascadia Code"/>
+        <Label Content="Пароль:" HorizontalAlignment="Left" Margin="169,201,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontSize="16"/>
+        <Label Content="Вход в программу" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Cascadia Code"/>
+        <ComboBox x:Name="usersenter" HorizontalAlignment="Left" Margin="276,141,0,0" VerticalAlignment="Top" Width="245" Height="27" ToolTip="Выберите вашего пользователя."/>
+        <PasswordBox x:Name="passenter" HorizontalAlignment="Left" Margin="276,201,0,0" VerticalAlignment="Top" Width="245" Height="27"  KeyDown="Passenter_KeyDown" ToolTip="Напишите пароль." />
+        <Button Content="ОК" HorizontalAlignment="Left" Margin="276,258,0,0" VerticalAlignment="Top" Height="25" Width="79" Background="{x:Null}" Click="Button_Click" ToolTip="Нажмите, чтобы войти"/>
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="398,258,0,0" VerticalAlignment="Top" Height="25" Width="80" Background="{x:Null}" Click="Button_Click_1" ToolTip="Нажмите, чтобы выйти"/>
+        <Image Source="/Image/img2.png" HorizontalAlignment="Left" Height="73" Margin="20,10,0,0" VerticalAlignment="Top" Width="115"/>
+
+    </Grid>
+</Window>
