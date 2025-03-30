@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Magazine.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,16 +32,47 @@ namespace Magazine
 
             switch (tag)
             {
-                case "Prices":
-                    MainFrame.Navigate(new Uri("PricesPage.xaml", UriKind.Relative));
-                    break;
-             
-            }
+                case "CashShifts":
+                    {
+                        MainFrame.Navigate(new Uri("Pages/CashShiftsPage.xaml", UriKind.Relative));
+                        if (MainFrame.Content is CashShiftsPage cashShiftsPage)
+                        {
+                            // Устанавливаем видимость или другие свойства
+                            cashShiftsPage.Visibility = Visibility.Visible; // Например, делаем страницу видимой
+                        }                   
+                        break;
+                    }
+
+                case "Calculator":
+                    {
+                        var calculatorWindow = new Windows.CalculatorWindow();
+                        calculatorWindow.Show();
+                        break;
+                    }
+
+                case "ChecksPoint":
+                    {
+                        MainFrame.Navigate(new Uri("Pages/ChecksPoint.xaml", UriKind.Relative));
+                        if (MainFrame.Content is ChecksPoint checkspoint)
+                        {
+                            // Устанавливаем видимость или другие свойства
+                            checkspoint.Visibility = Visibility.Visible; // Например, делаем страницу видимой
+                            MessageBox.Show("Привет");
+                        }
+                        break;
+                    }
+
+
+
+
+                    }
         }
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            this.Close(); // Закрытие окна
+            this.Close();
         }
+
+       
     }
 
 }

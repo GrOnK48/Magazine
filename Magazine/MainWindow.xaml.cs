@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Magazine.Classes;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -27,24 +28,38 @@ namespace Magazine
             dbHelper = new DbHelper();
 
             // Загрузка имен пользователей в ListBox
-            string query = "SELECT username FROM Users";
+            string query = "SELECT username, id_employee FROM Users"; 
             DataTable result = dbHelper.ExecuteQuery(query);
 
             if (result != null)
             {
-                var usernames = new List<string>();
+                var users = new List<User>();
                 foreach (DataRow row in result.Rows)
                 {
-                    usernames.Add(row["username"].ToString());
+                    users.Add(new User
+                    {
+                        IdEmployee = Convert.ToInt32(row["id_employee"]), // Используем id_employee
+                        Username = row["username"].ToString()
+                    });
                 }
 
-                usersenter.ItemsSource = usernames;
+                usersenter.ItemsSource = users;
             }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string username = usersenter.Text; // Убедитесь, что имя элемента совпадает с XAML
+            // Получаем выбранный ID пользователя
+            var selectedUser = usersenter.SelectedItem as User;
+            if (selectedUser == null)
+            {
+                MessageBox.Show("Выберите пользователя.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            int employeeId = selectedUser.IdEmployee; 
+            string username = selectedUser.Username;
+
             string enteredPassword = passenter.Password;
 
             // Проверка на пустой пароль
@@ -55,10 +70,10 @@ namespace Magazine
             }
 
             // SQL-запрос для получения хешированного пароля
-            string query = "SELECT password_hash FROM Users WHERE username = @username";
+            string query = "SELECT password_hash FROM Users WHERE id = @id";
             var parameters = new Dictionary<string, object>
     {
-        { "@username", username }
+        { "@id", employeeId }
     };
 
             DataTable result = dbHelper.ExecuteQuery(query, parameters);
@@ -73,6 +88,13 @@ namespace Magazine
                 if (isPasswordValid)
                 {
                     MessageBox.Show("Вход выполнен успешно.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                   
+
+                   
+                    Classes.AppContext.CurrentUserId = employeeId;
+
+                    // Открываем главное меню
                     Menu menu = new Menu();
                     menu.Show();
                     this.Close();

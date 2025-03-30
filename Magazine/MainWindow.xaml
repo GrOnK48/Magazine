@@ -12,7 +12,7 @@
         <Label Content="Пользователь:" HorizontalAlignment="Left" Margin="113,137,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Cascadia Code"/>
         <Label Content="Пароль:" HorizontalAlignment="Left" Margin="169,201,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontSize="16"/>
         <Label Content="Вход в программу" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Cascadia Code"/>
-        <ComboBox x:Name="usersenter" HorizontalAlignment="Left" Margin="276,141,0,0" VerticalAlignment="Top" Width="245" Height="27" ToolTip="Выберите вашего пользователя."/>
+        <ComboBox x:Name="usersenter"   DisplayMemberPath="Username" SelectedValuePath="Id" HorizontalAlignment="Left" Margin="276,141,0,0" VerticalAlignment="Top" Width="245" Height="27" ToolTip="Выберите вашего пользователя."/>
         <PasswordBox x:Name="passenter" HorizontalAlignment="Left" Margin="276,201,0,0" VerticalAlignment="Top" Width="245" Height="27"  KeyDown="Passenter_KeyDown" ToolTip="Напишите пароль." />
         <Button Content="ОК" HorizontalAlignment="Left" Margin="276,258,0,0" VerticalAlignment="Top" Height="25" Width="79" Background="{x:Null}" Click="Button_Click" ToolTip="Нажмите, чтобы войти"/>
         <Button Content="Отмена" HorizontalAlignment="Left" Margin="398,258,0,0" VerticalAlignment="Top" Height="25" Width="80" Background="{x:Null}" Click="Button_Click_1" ToolTip="Нажмите, чтобы выйти"/>

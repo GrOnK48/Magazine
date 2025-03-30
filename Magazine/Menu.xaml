@@ -9,73 +9,239 @@
         Title="Управление торговлей"
        Width="{DynamicResource {x:Static SystemParameters.MaximizedPrimaryScreenWidthKey}}" Height="{DynamicResource {x:Static SystemParameters.MaximizedPrimaryScreenHeightKey}}"   ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Menu DockPanel.Dock="Top" Background="White"  Margin="0,0,0,775">
+        <Menu DockPanel.Dock="Top" Background="#f5efe8"  Margin="0,0,0,780">
             <MenuItem Header="Файл">
-                <MenuItem Header="Открыть"/>
-                <MenuItem Header="Сохранить"/>
+                <MenuItem Header="Новый">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/New.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Открыть">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/OpenDock.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Закрыть">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/CloseDock.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Сохранить">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/SaveDock.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Сохранить как">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/SaveDock.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Печать">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/PrintDock.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator/>
                 <MenuItem Header="Выход" Click="Exit_Click"/>
             </MenuItem>
             <Separator Width="10"/>
             <MenuItem Header="Правка">
-                <MenuItem Header="Отменить"/>
-                <MenuItem Header="Повторить"/>
-            </MenuItem>
-            <Separator Width="10"/>
-            <MenuItem Header="Операции">
-                <MenuItem Header="Цены" Click="MenuItem_Click" Tag="Prices"/>
-                <MenuItem Header="Поступления"/>
-                <MenuItem Header="Продажи"/>
-                <MenuItem Header="Выручка"/>
-                <MenuItem Header="Инвентаризация"/>
+                <MenuItem Header="Найти">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/poisk.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Найти следующий">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/right.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Найти предыдущий">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/left.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Заменить">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/zamena.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Вырезать">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/virezat.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Копировать">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/copy.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Вставить">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/vstavit.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Очистить"/>
+                <MenuItem Header="Специальная вставка..."/>
+                <Separator/>
+                <MenuItem Header="Отменить">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/back.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Вернуть">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/vernyt.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Свойства">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/svoistva.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <Separator Width="10"/>
             <MenuItem Header="Цены">
-                <MenuItem Header="Пользователи"/>
-                <MenuItem Header="Конфигурация"/>
+                <MenuItem Header="Типы цен номенклатуры"/>
+                <MenuItem Header="Типы скидок и наценок"/>
+                <Separator/>
+                <MenuItem Header="Установки цен номенклатуры">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/setprice.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Установки скидок номенклатуры">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/setprocent.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Отмены скидок номенклатуры"/>
+                <MenuItem Header="Переоценки товаров в рознице"/>
+                <Separator/>
+                <MenuItem Header="Печать прайс листа">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/printprice.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Печать ценников">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/printcost.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Печать этикеток">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/printeticetka.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <Separator Width="10"/>
             <MenuItem Header="Поступления">
-                <MenuItem Header="Пользователи"/>
-                <MenuItem Header="Конфигурация"/>
+                <MenuItem Header="Поступления товаров и услуг в НТТ"/>
+                <MenuItem Header="Возвраты товаров поставщикам из НТТ"/>
+                <MenuItem Header="Перемещение товаров"/>
             </MenuItem>
             <Separator Width="10"/>
             <MenuItem Header="Продажи">
-                <MenuItem Header="Пользователи"/>
-                <MenuItem Header="Конфигурация"/>
+                <MenuItem Header="Номенклатура">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/nomenclatura.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Склады(место хранения)"/>
+                <MenuItem Header="Организации"/>
+                <MenuItem Header="Кассы ККМ"/>
+                <Separator/>
+                <MenuItem Header="Чеки ККМ" Tag="ChecksPoint"  Click="MenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/checkKKM.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Отчеты о розничных продажах"/>
+                <MenuItem Header="Отчет кассовой смены без гашения">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/x-report.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Закрытие кассовой смены">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/z-report.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Кассовые смены" Click="MenuItem_Click" Tag="CashShifts"/>
+                <MenuItem Header="Перемещение товаров"/>
+                <Separator/>
+                <MenuItem Header="Ведомость по товарам на складах"/>
+                <MenuItem Header="Ведомость по товарам в рознице"/>
+                <MenuItem Header="Ведомость по товарам в НТТ"/>
             </MenuItem>
             <Separator Width="10"/>
             <MenuItem Header="Выручка">
-                <MenuItem Header="Пользователи"/>
-                <MenuItem Header="Конфигурация"/>
+                <MenuItem Header="Приходные кассовые ордера"/>
+                <MenuItem Header="Расходные кассовые ордера"/>
+                <Separator/>
+                <MenuItem Header="Ведомость по денежным средствам"/>
             </MenuItem>
             <Separator Width="10"/>
             <MenuItem Header="Инвентаризация">
-                <MenuItem Header="Пользователи"/>
-                <MenuItem Header="Конфигурация"/>
-            </MenuItem>
-            <Separator Width="10"/>
-            <MenuItem Header="Обмен с ГосИС">
-                <MenuItem Header="Пользователи"/>
-                <MenuItem Header="Конфигурация"/>
+                <MenuItem Header="Инвентаризация товаров на складе"/>
+                <MenuItem Header="Корректировки серий и характеристик товаров"/>
+                <MenuItem Header="Переоценки товаров в НТТ"/>
+                <Separator/>
+                <MenuItem Header="Оприходывание товаров"/>
+                <MenuItem Header="Списание товаров"/>
             </MenuItem>
             <Separator  Width="10"/>
             <MenuItem Header="Сервис">
-                <MenuItem Header="Пользователи"/>
-                <MenuItem Header="Конфигурация"/>
+                <MenuItem Header="Калькулятор" Click="MenuItem_Click" Tag="Calculator">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/calculator.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Календарь">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/calendar.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Табло">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/tablo.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Временная блокировка"/>
+                <MenuItem Header="Параметры пользователя"/>
+                <MenuItem Header="Активные пользователи"/>
+                <MenuItem Header="Журнал регистрации"/>
+                <Separator/>
+                <MenuItem Header="Настройки пользователя"/>
+                <MenuItem Header="Переключить интерфейс"/>
+                <Separator/>
+                <MenuItem Header="Настройка"/>
+                <MenuItem Header="Параметры"/>
             </MenuItem>
             <Separator  Width="10"/>
             <MenuItem Header="Окна">
-                <MenuItem Header="Пользователи"/>
-                <MenuItem Header="Конфигурация"/>
+                <MenuItem Header="Новое окно">
+                    <MenuItem.Icon>
+                        <Image Source="/Image/Image_MenuItem/window.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Горизонтально разделить окно"/>
+                <MenuItem Header="Вертикально разделить окно"/>
+                <MenuItem Header="Закрыть"/>
+                <MenuItem Header="Закрыть все"/>
             </MenuItem>
             <Separator Width="10"/>
             <MenuItem Header="Справка">
-                <MenuItem Header="Пользователи"/>
-                <MenuItem Header="Конфигурация"/>
+                <MenuItem Header="Справка"/>
+                <MenuItem Header="Содержание справки"/>
+                <MenuItem Header="Поиск по справке"/>
+                <Separator/>
+                <MenuItem Header="О программе"/>
             </MenuItem>
         </Menu>
-        <Frame x:Name="MainFrame" Height="770" VerticalAlignment="Top" Margin="0,52,0,0"/>
+        <Frame x:Name="MainFrame" Height="780" VerticalAlignment="Top" Margin="0,42,0,0" NavigationUIVisibility="Hidden"/>
 
 
 

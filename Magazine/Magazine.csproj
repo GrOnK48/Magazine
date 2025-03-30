@@ -98,6 +98,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="Tranform.Try, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Calculator.1.0.0.1\lib\40\Tranform.Try.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -107,6 +110,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\Sale.cs" />
+    <Compile Include="Classes\SaleDetail.cs" />
+    <Compile Include="Classes\SaleInfo.cs" />
+    <Compile Include="Pages\ChecksPoint.xaml.cs">
+      <DependentUpon>ChecksPoint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\CalculatorWindow.xaml.cs">
+      <DependentUpon>CalculatorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\CheckDetails.xaml.cs">
+      <DependentUpon>CheckDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DateRangeWindow.xaml.cs">
+      <DependentUpon>DateRangeWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -115,6 +133,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\AppContext.cs" />
+    <Compile Include="Classes\PointSale.cs" />
+    <Compile Include="Classes\User.cs" />
     <Compile Include="DbHelper.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -124,7 +145,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PricesPage.xaml">
+    <Page Include="Pages\CashShiftsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ChecksPoint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CalculatorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CheckDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DateRangeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,8 +170,8 @@
     <Compile Include="Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PricesPage.xaml.cs">
-      <DependentUpon>PricesPage.xaml</DependentUpon>
+    <Compile Include="Pages\CashShiftsPage.xaml.cs">
+      <DependentUpon>CashShiftsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -167,6 +204,105 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\34989290-zuhause-startseite-symbol-symbol-bild-illustration-von-das-haus-echt-nachlass-grafik-eigentum-design-bild-vektor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\OpenDock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\CloseDock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\SaveDock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\PrintDock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\poisk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\zamena.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\virezat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\vstavit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\vernyt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\svoistva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\printcost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\printprice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\printeticetka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\setprice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\setprocent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\nomenclatura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\checkKKM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\x-report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\z-report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\calculator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\tablo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Image_MenuItem\window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\krestik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\true.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\false.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\rightstrelka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\diapazone.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

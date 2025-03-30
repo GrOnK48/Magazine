@@ -10,23 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Magazine
+namespace Magazine.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для PricesPage.xaml
+    /// Логика взаимодействия для CheckDetails.xaml
     /// </summary>
-    public partial class PricesPage : Page
+    public partial class CheckDetails : Window
     {
-        public PricesPage()
+        public CheckDetails()
         {
             InitializeComponent();
-        }
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
-        {
-          
         }
     }
 }
