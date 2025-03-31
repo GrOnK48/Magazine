@@ -38,7 +38,7 @@ namespace Magazine
                         if (MainFrame.Content is CashShiftsPage cashShiftsPage)
                         {
                             // Устанавливаем видимость или другие свойства
-                            cashShiftsPage.Visibility = Visibility.Visible; // Например, делаем страницу видимой
+                            cashShiftsPage.Visibility = Visibility.Visible; 
                         }                   
                         break;
                     }
@@ -56,8 +56,7 @@ namespace Magazine
                         if (MainFrame.Content is ChecksPoint checkspoint)
                         {
                             // Устанавливаем видимость или другие свойства
-                            checkspoint.Visibility = Visibility.Visible; // Например, делаем страницу видимой
-                            MessageBox.Show("Привет");
+                            checkspoint.Visibility = Visibility.Visible; 
                         }
                         break;
                     }

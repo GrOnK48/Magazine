@@ -1,4 +1,5 @@
 ﻿using Magazine.Classes;
+using Magazine.Windows;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -98,7 +99,28 @@ namespace Magazine.Pages
 
         private void OpenCheck_Click(object sender, RoutedEventArgs e)
         {
-           
+            if (datagrid.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите чек для просмотра", "Информация",
+                              MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            var selectedSale = datagrid.SelectedItem as SaleInfo;
+            if (selectedSale != null)
+            {
+                try
+                {
+                    var detailsWindow = new CheckDetails(selectedSale.Id);
+                    detailsWindow.Owner = Window.GetWindow(this); // Устанавливаем владельца
+                    detailsWindow.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при открытии чека: {ex.Message}", "Ошибка",
+                                  MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
 
         private void AddNewCheck_Click(object sender, RoutedEventArgs e)
@@ -118,18 +140,10 @@ namespace Magazine.Pages
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService?.GoBack();
+            var navigationService = NavigationService;
+            navigationService?.Navigate(null);
         }
     }
 
-    public class SaleInfo
-    {
-        public int Id { get; set; }
-        public DateTime SaleDate { get; set; }
-        public string PaymentType { get; set; }
-        public decimal TotalAmount { get; set; }
-        public int ItemsCount { get; set; }
-        public string PointName { get; set; }
-        public string EmployeeName { get; set; }
-    }
+  
 }

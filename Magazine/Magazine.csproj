@@ -111,7 +111,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\Sale.cs" />
-    <Compile Include="Classes\SaleDetail.cs" />
+    <Compile Include="Classes\SaleDetailItem.cs" />
     <Compile Include="Classes\SaleInfo.cs" />
     <Compile Include="Pages\ChecksPoint.xaml.cs">
       <DependentUpon>ChecksPoint.xaml</DependentUpon>
